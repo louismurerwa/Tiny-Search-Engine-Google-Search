@@ -4,12 +4,12 @@
 
 
 ## Usage: 
-crawler seedURL pageDirectory maxDepth
+crawler seedURL pageDirectory maxDepth.
 
-Example: crawler http://old-www.cs.dartmouth.edu/index.html ./data/ 2
+Example: crawler http://old-www.cs.dartmouth.edu/index.html ./data/ 2.
 
 ### Sample Command Line Output
-Count 1 Depth 2 Saving http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Eleazar_Wheelock.html
+Count 1 Depth 2 Saving http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Eleazar_Wheelock.html.
 
 ## Structure
 1.main, which parses arguments and calls the crawler function

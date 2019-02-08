@@ -1,5 +1,5 @@
 # Makefile for 'bag' module
-#
+#Louis Murerwa
 # David Kotz, April 2016, 2017
 # updated by Xia Zhou, July 2016, 2018, January 2019
 
@@ -20,8 +20,10 @@ crawler.o:crawler.c ../libcs50/libcs50.a
 
 .PHONY: test clean
 
-test: $(PROG) datafile
-	./$(PROG) < datafile
+test: 
+	mkdir testDir
+	
+
 
 
 clean:
@@ -29,4 +31,5 @@ clean:
 	rm -f $(PROG)
 	rm -f core
 	rm -rf search
-	
+	rm -rf testDir
+

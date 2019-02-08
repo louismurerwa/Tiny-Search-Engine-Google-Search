@@ -1,9 +1,9 @@
-#Louis Murerwa
-#Winter 2019
+# Louis Murerwa
+# Winter 2019
 
 
-##Crawler.c
-##Testing.md
+## Crawler.c
+## Testing.md
 
 
 
@@ -16,52 +16,52 @@ I tested this program on the server @flume.cs.dartmouth.edu and it worked on all
 I have detailed my testing commands below and their respective outputs.
 
 
-##Testing the Crawler
+## Testing the Crawler
 
-##Test 1: Run with bad url
+### Test 1: Run with bad url
 ./crawler http://www.cs.dartm.edu/~cs50/tse/ ./testDir/ 1
 
 Usage:Seed URL is not an internal URL.
 
 
-##Test 2: Run with bad directory
+### Test 2: Run with bad directory
 ./crawler http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/ ./notExist 1
 
 Usage:./notExist directory doesn't exist.
 
-##Test 3: Run with invalid depth
+### Test 3: Run with invalid depth
 ./crawler http://old-www.cs.dartmouth.edu/~cs50/tse/ ../testDir/ -4 
 
 Usage:Depth must be an a positive integer.
 
-##Test 4: Run with few than required parameters or more than required
+### Test 4: Run with few than required parameters or more than required
 
 ./crawler http://old-www.cs.dartmouth.edu/~cs50/tse/ ../testDir/
 
 Usage:Enter three parameters
 
-##Test 5: Test the crawler with a seedURL that points to a non-existent server.
+### Test 5: Test the crawler with a seedURL that points to a non-existent server.
 
 ./crawler http://old-www.cs.dart.edu/~cs50/tse/ ../testDir/ 1
 
 Usage:Seed URL not valid
 
 
-##Test 5: Test the crawler with a seedURL that points to a non-internal server.
+### Test 5: Test the crawler with a seedURL that points to a non-internal server.
 
 ./crawler http://www.cs.dartmouth.edu/home ../testDir/ 1
 
 Usage:Seed URL not valid
 
-##Test 6 :the crawler with a seedURL that points to a valid server but non-existent page.
+### Test 6 :the crawler with a seedURL that points to a valid server but non-existent page.
 
 ./crawler http://old-www.cs.dart.edu/djjdkd ../testDir/ 1
 
 Usage:Seed URL not valid
 
-##Test 7 :Crawling a closed list of pages which link back to each other 
+### Test 7 :Crawling a closed list of pages which link back to each other 
 
-###Depth 1
+#### Depth 1
 ./crawler http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/ ./testDir 3
 
 Depth 0 Saving http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/
@@ -72,7 +72,7 @@ cd testDir
 Files in testDir
 0  1 
 
-###Depth 2
+#### Depth 2
 
 ./crawler http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/ ./testDir 2
 
@@ -86,7 +86,7 @@ cd testDir
 Files in testDir
 0  1  2  3  
 
-###Depth 3
+#### Depth 3
 
 ./crawler http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/ ./testDir 2
 

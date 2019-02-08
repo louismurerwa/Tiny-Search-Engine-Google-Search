@@ -83,6 +83,7 @@ int main(int argc, char *argv[]){
 	return 0;
 }
 
+
 //This function crawlws the page of the input URL to get further URL links
 int crawl(char *url , char *pageDirectory , int maxDepth){
 	//Keep counter of pages saved so far

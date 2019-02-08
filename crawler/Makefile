@@ -23,6 +23,7 @@ crawler.o:crawler.c ../libcs50/libcs50.a
 test: $(PROG) datafile
 	./$(PROG) < datafile
 
+
 clean:
 	rm -f *~ *.o *.dSYM
 	rm -f $(PROG)

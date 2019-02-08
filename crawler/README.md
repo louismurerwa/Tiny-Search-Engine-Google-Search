@@ -20,15 +20,15 @@ Count 1 Depth 2 Saving http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/
 
 ### Error Messages
 
-Code:Error
-0:Success.
-1:Usage:Enter three parameters.
-2:Usage:Seed URL not valid.
-3:Usage:Seed URL cannot be normalised.
-4:Usage:%s directory doesn't exist.
-5:Usage:Depth must be an a positive integer.
-6:Max depth should be greater than 0.
-8:File %s creation failed.
+* Code:Error
+* 0:Success.
+* 1:Usage:Enter three parameters.
+* 2:Usage:Seed URL not valid.
+* 3:Usage:Seed URL cannot be normalised.
+* 4:Usage:%s directory doesn't exist.
+* 5:Usage:Depth must be an a positive integer.
+* 6:Max depth should be greater than 0.
+* 8:File %s creation failed.
 
 
 ## Assumptions

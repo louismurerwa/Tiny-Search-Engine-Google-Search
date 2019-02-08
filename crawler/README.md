@@ -12,7 +12,7 @@ Example: crawler http://old-www.cs.dartmouth.edu/index.html ./data/ 2.
 Count 1 Depth 2 Saving http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Eleazar_Wheelock.html.
 
 ## Structure
-1.main, which parses arguments and calls the crawler function
+1 . main, which parses arguments and calls the crawler function.
 2.crawler, which loops over pages to explore, until the list is exhausted
 3.fetchPage, which fetches a page from a URL
 4.pageScanner, which extracts URLs from a page and processes each one

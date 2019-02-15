@@ -12,7 +12,7 @@
 #include <string.h>
 #include"hashtable.h"
 #include"memory.h"
-#include"../libcs50/set.h"
+#include"../libcs50/set.h" 
 #include"jhash.h"
 
 
@@ -139,6 +139,7 @@ void hashtable_print(hashtable_t *ht, FILE *fp,
 void hashtable_iterate(hashtable_t *ht, void *arg,
                void (*itemfunc)(void *arg, const char *key, void *item) )
 {
+    printf("in save\n");
   if (ht!= NULL && itemfunc != NULL) {
     // call itemfunc with arg, on each item
     for (int i = 0;i <ht->num;i++) {

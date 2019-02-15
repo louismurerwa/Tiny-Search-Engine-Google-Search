@@ -10,7 +10,7 @@
  * David Kotz, April 2016, 2017
  * Xia Zhou, July 2017, 2018, January 2019
  */
-
+ 
 #ifndef __BAG_H
 #define __BAG_H
 

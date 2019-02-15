@@ -1,12 +1,12 @@
 # Makefile for CS50 library
-#   Builds and compiles all these utility functions into a library.
+# Builds and compiles all these utility functions into a library.
 #
 # CS50 
 
 # object files, and the target library
-OBJS = bag.o counters.o file.o hashtable.o jhash.o memory.o \
-       set.o webpage.o
-LIB = libcs50.a
+OBJS = index.o pagedir.o word.o 
+
+LIB = common.a
 
 # add -DNOSLEEP to disable the automatic sleep after web-page fetches
 #               (students, please do not use -DNOSLEEP!)
@@ -19,18 +19,13 @@ CC = gcc
 MAKE = make
 
 # Build the library by archiving object files
-$(LIB):
-	cp $(LIB)-`uname` $(LIB)
+$(LIB): $(OBJS)
+	ar cr $(LIB) $(OBJS)
 
 # Dependencies: object files depend on header files
-bag.o: bag.h
-counters.o: counters.h
-file.o: file.h
-hashtable.o: hashtable.h set.h jhash.h 
-jhash.o: jhash.h
-memory.o: memory.h
-set.o: set.h
-webpage.o:  webpage.h
+index.o: index.h 
+pagedir.o: pagedir.h
+word.o: word.h
 
 .PHONY: clean 
 

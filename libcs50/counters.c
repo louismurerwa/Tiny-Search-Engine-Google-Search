@@ -76,7 +76,7 @@ else if(ctrs != NULL && key >= 0 ){
     counternode_t *current = counter_find(ctrs,key);
     if (current != NULL) {
       // add it to the head of the list
-      current->count ++;//increment count of current counter
+      current->count++;//increment count of current counter
       return current->count;
     }
   }
@@ -110,6 +110,7 @@ static counternode_t* counter_find(counters_t *ctrs, const int key)
 // outside this file
 static counternode_t* counternode_new(const int key , int count)
 {
+  
   const int newkey = key;
   int newcount = count;
   //create memory of the node

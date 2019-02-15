@@ -47,7 +47,7 @@ void itemdelete(void *item);
 //This function crawlws the page of the input URL to get further URL links
 int crawl(char *url , char *pageDirectory , int maxDepth){
 	//Keep counter of pages saved so far
-	int count = 0;
+	int count = 1;
 
 	//Create datastructures to hold our webpage and url
 	bag_t *bag = bag_new();
@@ -125,7 +125,7 @@ int pageSaver(webpage_t* page, const char* pageDirectory ,int count)
     //Write the URL ,DEPTH and HTML of the page into the file
     fprintf(fp,"%s",webpage_getURL(temp)); 
     fprintf(fp, "\n"); 
-	fprintf(fp, "Depth: %d", webpage_getDepth(temp));
+	fprintf(fp, "%d", webpage_getDepth(temp));
 	fprintf(fp, "\n");
     fprintf(fp,"%s",webpage_getHTML(temp));      
     fclose(fp);
@@ -192,6 +192,19 @@ int main(int argc, char *argv[]){
 	char *pageDirectory = argv[2];
 	DIR *dir  = opendir(pageDirectory);
 	if (dir != NULL) {
+		printf("Saving /.crawler file to pageDirectory");
+		//Create link to the where files are stored
+		char filename[10000];
+		strcpy(filename,pageDirectory);
+		strcat(filename,"/.crawler");
+		
+		//Create file
+		FILE *fp;
+   		fp = fopen(filename,"w");
+    	if(fp==NULL){
+    		fprintf(stderr, "File %s creation failed\n",filename);
+    		return 8;
+    	}
 		closedir(dir);
 	}
 	else{

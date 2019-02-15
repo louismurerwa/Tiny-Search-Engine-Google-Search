@@ -41,7 +41,7 @@ Usage: /indexer [CRAWLER_DIRECTORY] [RESULTS_FILENAME]
 Generated index data structure is printed onto the file output.
 
 ## indextest.c
-
+ 
 
 ### Test 1: Run with few arguments
 ./indextest output

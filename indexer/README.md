@@ -33,3 +33,4 @@ Usage: /indextest [INDEX_DATASTRUCTURE_FILE] [NEW_INDEX_DATASTRUCTURE_FILE]
 - Runs a testing script called indexertest.sh.
  - The testing script tests extensively tests both the indextest and indexer programs.
 - An in-depth description of the script is contained in indexertest.sh.
+ 

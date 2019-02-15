@@ -39,7 +39,7 @@ Usage:Depth must be an a positive integer.
 ./crawler http://old-www.cs.dartmouth.edu/~cs50/tse/ ../testDir/
 
 Usage:Enter three parameters
-
+ 
 ### Test 5: Test the crawler with a seedURL that points to a non-existent server.
 
 ./crawler http://old-www.cs.dart.edu/~cs50/tse/ ../testDir/ 1

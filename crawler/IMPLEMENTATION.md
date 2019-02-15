@@ -39,3 +39,4 @@ These are the steps I took inorder to implement this crawler
 	- for each url scanned
 		- normalise the scaned Url
 		- create a webpage of the url and insert it into the bag
+ 

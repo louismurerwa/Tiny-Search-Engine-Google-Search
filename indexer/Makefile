@@ -36,7 +36,7 @@ test:
 valgrind:
 	valgrind --leak-check=full -v ./indexer
 
-
+ 
 valgrindtest:
 	valgrind --leak-check=full -v ./indextest
 	

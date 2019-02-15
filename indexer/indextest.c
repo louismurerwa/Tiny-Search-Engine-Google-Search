@@ -37,7 +37,7 @@ void test(char *oldfileIndex,char *newfileindex){
 //main function
    
 int main(int argc, char *argv[]){
- 
+  
 
 	//Check command line arguments
 	//Check if user has entered the required number of parameters

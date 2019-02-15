@@ -12,7 +12,7 @@ The starter kit includes two pre-built libraries:
 To clean up, run `make clean`.
 
 ## Overview
-
+ 
  * index - to store an inverted index (words –> documents).
  * pagedir - functions for TSE work with directories.
  * word -  functions for TSE work with words

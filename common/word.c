@@ -21,3 +21,4 @@ NormalizeWord (char *word)
   }
   return word;
 }
+ 

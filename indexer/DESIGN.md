@@ -23,7 +23,7 @@ Usage: /indexer [CRAWLER_DIRECTORY] [RESULTS_FILENAME]
 
 1. [TARGET_DIRECTORY] – the directory with the crawled webpages you would like to index.
 2. [RESULTS_FILENAME] – the desired name of the index file
-
+ 
 >Requirements:
 1. The target directory must contain .crawler file to indicate that its a crawler produced directory.
 2. The output file must exist or be possible to be opened.

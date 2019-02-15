@@ -31,4 +31,4 @@ word.o: word.h
 
 # clean up after our compilation
 clean:
-	rm -f $(LIB) *~ *.o
+	rm -f $(LIB) *~ *.o 

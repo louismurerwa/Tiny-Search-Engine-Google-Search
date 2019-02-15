@@ -15,3 +15,4 @@
 char *NormalizeWord (char *word);
 
 #endif // __WORD_H
+ 

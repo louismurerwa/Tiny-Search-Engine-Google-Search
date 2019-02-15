@@ -35,3 +35,4 @@ Count 1 Depth 2 Saving http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/
 Current directory input as argument must exist, or the program will return an error and quit.
 All URLs to be crawled must begin with "http://old-www.cs.dartmouth.edu/~cs50/tse/". 
 When server does not exist or url is not valid they are both treat as non-internal URL'S.
+ 

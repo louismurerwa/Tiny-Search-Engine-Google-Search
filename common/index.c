@@ -110,7 +110,7 @@ bool index_insert(index_t *index, const char *key,int documentID)
  void *index_find(index_t *ht, const char *key)
 {
   return hashtable_find(ht->hashtable,key);
-}
+} 
 
  /**************** index_print() ****************/
 /* Print the whole table; provide the output file and func to print each item.

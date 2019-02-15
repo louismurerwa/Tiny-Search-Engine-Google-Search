@@ -21,7 +21,7 @@
  * If it exists then the method return true.
  */
 bool isCrawlerDirectory(char *dir);
-
+ 
 
 /**************** pageSaver ****************/
 /*

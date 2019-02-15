@@ -71,7 +71,7 @@ int indexer(char *pageDirectory , char *indexFilename){
 	}
 	//Save the indexer to an output file
 	index_save(indexer,indexFilename);
-
+ 
 	//Delete the index datastructure
 	index_delete(indexer);
 

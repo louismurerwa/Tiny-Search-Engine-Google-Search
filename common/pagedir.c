@@ -17,7 +17,7 @@
 #include "../libcs50/file.h"
 #include "pagedir.h"
 
-
+ 
 /**************** isCrawlerDirectory ****************/
 /*
  * See "pagedir.h" for full documentation.

@@ -32,7 +32,7 @@
        -After using the page the indexer calls webpage_delete( ) which deletes the webpages and frees the valuable memory.
     - The indexer then saves the index data-structure to a file by calling the index_save method( ).
     - Finally the indexer delete the index and frees some valuable memory.
-
+ 
 >Simplified Version.
 
 Indexer

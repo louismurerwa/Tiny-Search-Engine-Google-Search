@@ -100,7 +100,7 @@ echo "" >> testoutput.txt
 
 echo "" >> testoutput.txt
 echo "" >> testoutput.txt
-
+ 
 echo "Sorting both output from indexer.c and indexertest.c" >> testoutput.txt
 
 cat ./output | sort > ./output_sorted;cat ./newoutput| sort > ./newoutput_sorted

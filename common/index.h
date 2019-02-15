@@ -19,7 +19,7 @@
 typedef struct index index_t;  // opaque to users of the module
 
 /**************** functions ****************/
-
+ 
 /* Create a new (empty) index; return NULL if error. */
 index_t *index_new(const int num_slots);
 

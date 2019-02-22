@@ -27,18 +27,21 @@ To check memory run valgrind `make valgrind`
 ## Usage: 
 ./crawler seedURL pageDirectory maxDepth.
 
+```sh 
+Usage: /crawler [SEED_URL] [CRAWLER_DIRECTORY] [MAX_DEPTH] 
+
+```
+>The indexer takes in two parameters:
+```sh  
+ 1. [SEED_URL] :A url that the crawler starts crawling at.
+ 2. [CRAWLER_DIRECTORY]: A crawler produced directory containing the files to index.
+ 3. [MAX_DEPTH]: The depth that the crawler crawls to.
+```
+
 Example: crawler http://old-www.cs.dartmouth.edu/index.html ./data/ 2.
 
 ### Sample Command Line Output
 Count 1 Depth 2 Saving http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Eleazar_Wheelock.html.
-
-## Structure
-1. main which parses arguments and calls the crawler function.
-2. crawler, which loops over pages to explore, until the list is exhausted
-3. fetchPage, which fetches a page from a URL
-4. pageScanner, which extracts URLs from a page and processes each one
-5. pageSaver, which outputs a page to the the appropriate file
-
 
 ## Assumptions
 Current directory input as argument must exist, or the program will return an error and quit.

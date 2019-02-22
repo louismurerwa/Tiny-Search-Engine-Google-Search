@@ -9,6 +9,12 @@ core
 \#*\#
 .\#*
 
+# Executables
+*.exe
+*.out
+*.app
+
+
 # MacOS X
 .DS_Store
 .AppleDouble

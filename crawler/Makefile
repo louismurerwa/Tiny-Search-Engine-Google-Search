@@ -22,8 +22,10 @@ crawler.o:crawler.c ../libcs50/libcs50.a
 
 test: 
 	mkdir testDir
+	./crawler http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/ ../crawler/testDir  2
 	
-
+valgrind:
+	valgrind --leak-check=full -v ./crawler http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/ ../crawler/testDir  2
 
 
 clean:

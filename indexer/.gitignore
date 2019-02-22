@@ -17,3 +17,8 @@ Icon
 ._*
 .Spotlight-V*
 .Trashes 
+
+# Executables
+*.exe
+*.out
+*.app

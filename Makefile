@@ -11,6 +11,7 @@ all:
 	$(MAKE) -C common
 	$(MAKE) -C crawler
 	$(MAKE) -C indexer
+	$(MAKE) -C querier
 
 ############## valgrind all programs ##########
 valgrind: all

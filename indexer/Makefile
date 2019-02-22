@@ -31,10 +31,11 @@ indextest.o:indextest.c ../common/*.h ../libcs50/*.h
 
 
 test: 
+	./indexer ../crawler/testDir output
 	./indexertest.sh
 
 valgrind:
-	valgrind --leak-check=full -v ./indexer
+	valgrind --leak-check=full -v ./indexer ../crawler/testDir output
 
  
 valgrindtest:

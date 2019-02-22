@@ -31,7 +31,7 @@ To check memory run valgrind `make valgrind`
 Usage: /crawler [SEED_URL] [CRAWLER_DIRECTORY] [MAX_DEPTH] 
 
 ```
->The indexer takes in two parameters:
+>The crawler takes in three parameters:
 ```sh  
  1. [SEED_URL] :A url that the crawler starts crawling at.
  2. [CRAWLER_DIRECTORY]: A crawler produced directory containing the files to index.

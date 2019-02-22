@@ -4,7 +4,7 @@
 # CS50 
 
 # object files, and the target library
-OBJS = index.o pagedir.o word.o 
+OBJS = index.o pagedir.o word.o list.o
 
 LIB = common.a
 
@@ -26,6 +26,7 @@ $(LIB): $(OBJS)
 index.o: index.h 
 pagedir.o: pagedir.h
 word.o: word.h
+list.o:list.h 
 
 .PHONY: clean 
 

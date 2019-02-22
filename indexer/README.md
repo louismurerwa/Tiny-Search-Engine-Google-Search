@@ -9,6 +9,8 @@ To clean up, run `make clean`.
 
 To run testscript  `make test`.
 
+To run vlagrind `make valgrind`
+
 > The TSE indexer is a standalone program that reads the document files produced by the **TSE crawler**, builds an index, and writes that index to a file. Its companion, the index tester, loads an index file produced by the indexer and saves it to another file.The Indexer is part of the three components of the Tiny Search Engine program. It is responsible for "indexing" the webpages downloaded by the crawler. It gets all the words in all of the downloaded documents and counts the frequency of their occurence. It then prints this information into a file for reading.
 
 ```sh 

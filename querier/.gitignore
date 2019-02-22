@@ -1,0 +1,19 @@
+# Object files, libraries, core files
+*.o
+*.a
+*.txt
+core
+
+# Emacs
+*~
+\#*\#
+.\#*
+
+# MacOS X
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.Spotlight-V*
+.Trashes 

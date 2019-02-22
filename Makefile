@@ -15,7 +15,8 @@ all:
 ############## valgrind all programs ##########
 valgrind: all
 	$(MAKE) -C crawler valgrind
-
+	$(MAKE) -C indexer valgrind
+	$(MAKE) -C querier valgrind
 ############## clean  ##########
 clean:
 	rm -f *~
@@ -23,3 +24,4 @@ clean:
 	$(MAKE) -C common clean
 	$(MAKE) -C crawler clean
 	$(MAKE) -C indexer clean
+	$(MAKE) -C querier clean

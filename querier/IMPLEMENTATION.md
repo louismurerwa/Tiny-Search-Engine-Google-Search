@@ -5,21 +5,6 @@
 ## CS50 Software Development and Design.
 #### Tiny Search Engine – Crawler Implemantation.
  
- 
->DataStructures
-
-* **Hash-table.**
-
->I used an index data-structure that uses a set for its implementation. The index data-structure stores the words, which are found in the documents created by crawler. The documents are named by ID, starting at 1 and increasing by one. The index takes an item, in this case counters. Counters for their key takes the document ID that the word was found in. The counter also keeps track of the frequencies of the word in each document. After the user inputs a query the program searches for the counts in each document.
-
-* **Set**
-
->I used a set to hold my page id and word frequency.The current-set held objects that corresponded to one word.The currentSet was intersected with with andURLS set to produce the andURLS set which held objects in an and sequence.The andURLs sets were merged together after an and operator to produce the Url final set which held all objects for the query.
-
-1. **currentSet** - Held objects corresponding to one word.
-2. **andURLS** - held objects corresponding to an and sequence.
-3. **Urlfinal** - held objects corresponding to the whole query.
-
 
 
 * **List**
@@ -126,18 +111,61 @@ int countFiles(char *filePath )
 ```
 -Counts the number of lines in a file .
 
+```c
+static void rank(set_t *Urlfinal,char *pageDir)
+```
+-Ranks the pages in descending order of frequency.
+-Uses a list DataStructure which stores items in order.
+list.c
+
+````c
+
+/**************** global types ****************/
+typedef struct list list_t;  // opaque to users of the module
+
+/**************** functions ****************/
+
+/* Create a new (empty) list; return NULL if error. */
+list_t *list_new(void);
+
+/* Insert item, identified by a key (string), into the given list.
+ * The key string is copied for use by the list; that is, the module
+ * is responsible for allocating memory for a copy of the key string, and
+ * later deallocating that memory; thus, the caller is free to re-use or 
+ * deallocate its key string after this call.  
+ * Return false if key exists, any parameter is NULL, or error;
+ * return true iff new item was inserted.
+ */
+bool list_insert(list_t *list, const char *key, void *item);
 
 
+/* Iterate over all items in the list, in undefined order.
+ * Call the given function on each item, with (arg, key, item).
+ * If list==NULL or itemfunc==NULL, do nothing.
+ */
+void list_iterate(list_t *list, void *arg,
+		 void (*itemfunc)(void *arg, const char *key, void *item) );
 
+
+/* Counts the number of items stored in a list*/
+int list_size(list_t *list);
+
+
+/* Check if a list is empty and return true if it is empty*/
+bool list_isEmpty(list_t *list);
+
+/* Delete the whole list; ignore NULL list.
+ * Provide a function that will delete each item (may be NULL).
+ */
+void list_delete(list_t *list, void (*itemdelete)(void *item) );
+
+
+````
 
 
 
 #### Enjoy
 
 ![Minion](https://octodex.github.com/images/minion.png)
-![Stormtroopocat](https://octodex.github.com/images/stormtroopocat.jpg "The Stormtroopocat")
 
-![Alt text][id]
-
-[id]: https://octodex.github.com/images/dojocat.jpg  "The Dojocat"
  

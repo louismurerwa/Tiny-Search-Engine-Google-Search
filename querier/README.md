@@ -52,8 +52,11 @@ Return Values.
 
 0.  Success
 1. Incorrect number of arguments
-2.  Invalid crawler output directory or invalid index file
-3. Error opening file for I/O
+2. Invalid crawler output directory
+3. Invalid index file
+4. First Word in a query is an operator
+5. Second Word in a query is an operator.
+6. Two Consecutive operators in a query.
 
 pageDirectory has files named 1, 2, 3, …, without gaps.
 The content of files in pageDirectory follow the format as defined in the specs; thus your code (to read the files) need not have extensive error checking.

@@ -3,7 +3,7 @@
 # CS50
 
 MAKE = make
-.PHONY: all valgrind clean
+.PHONY: all valgrind test clean
 
 ############## default: make all libs and programs ##########
 all: 
@@ -18,6 +18,14 @@ valgrind: all
 	$(MAKE) -C crawler valgrind
 	$(MAKE) -C indexer valgrind
 	$(MAKE) -C querier valgrind
+
+
+############## test all programs ##########
+test: all
+	$(MAKE) -C crawler test
+	$(MAKE) -C indexer test
+	$(MAKE) -C querier test
+
 ############## clean  ##########
 clean:
 	rm -f *~

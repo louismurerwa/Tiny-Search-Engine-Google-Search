@@ -1,13 +1,12 @@
 /* ========================================================================== */
-/* File: indexer.c - Tiny Search Engine web crawler
+/* File: querier.c - Tiny Search Engine web querier
  *
  * Author:Louis Murerwa
  *
  * Input: [crawlerDirectory] [indexFilename]
- * * Command line options: N/A
- * 
- * 
- * Data structures used: A hashtable to track the page and count that a word appears in.
+ * * Command line options: Query
+ *  
+ *   
  */
 /* ========================================================================== */
 // ---------------- System libs e.g., <stdio.h>----------//
@@ -17,7 +16,7 @@
 #include <string.h> 
 #include <unistd.h>
 #include <dirent.h>
- 
+   
 
 // ---------------- Access local libraries ------------//
 #include "../libcs50/set.h"
@@ -28,7 +27,7 @@
 #include "../common/word.h"
 #include "../common/index.h"
 #include "../common/list.h"
- 
+   
 //Function definitions
 int processQuery(index_t *index , char *pageDir);
 int extractWords(char *sentence ,char *words[]);
@@ -47,6 +46,7 @@ static void printQuery(void *pageDir, const char *key, void *item);
 static void itemdelete(void *item);
 static void set_sort(set_t *set,list_t *sortedList);
 static void set_sortHelper(void *arg, const char *key, void *item);
+static void rank(set_t *set,char *pageDir);
 
 /* ========================================================================== */
 //This function reads queries from stdin and processes them by calling difrent functions
@@ -96,7 +96,7 @@ int extractWords(char *sentence ,char *words[]){
 			count=count+1;
 		}
 		else{
-			fprintf(stderr,"Error:'%s' conatains a non-Alpahanumeric character\n",temp);
+			fprintf(stderr,"Error:'%s' contains a non-Alpahanumeric character\n",temp);
 			return -1;
 		}
 
@@ -129,18 +129,18 @@ int checkQuery(char *words[],int size){
 	//Check if that the first word of a query is not an operator
 	if(isOperator(words[0])==true){
 		fprintf(stderr,"Error:First word in query is an '%s' operator\n",words[0]);
-		return 2;
+		return 4;
 	}
 	//Check that the last word of a query is not an operator
 	if(isOperator(words[size-1])==true){
 		fprintf(stderr,"Error:Last word word in query is an '%s' operator\n",words[size-1]);
-		return 3;
+		return 5;
 	}
 	//Check that there are no concequetive operators
 	for (int i = 0; i < size; i++ ) {
 		if(size>1 && i < size-1 && isOperator(words[i])&&isOperator(words[i+1])){
 			fprintf(stderr,"Usage:Two concecutive operators in query.'%s' and '%s' are consequtive.\n",words[i],words[i+1]);
-			return 4;
+			return 6;
 		}
 	}
 	return 0;
@@ -224,30 +224,39 @@ int runQuery(index_t *index ,char *words[],char *pageDir,int count){
 	set_delete(andURLS,itemdelete);
 
 	//Rank the pages in descending order
+	rank(Urlfinal,pageDir);
 	
+	return 0; 
+}
+
+
+/* Rank the query in descending order
+ */
+
+static void rank(set_t *Urlfinal,char *pageDir){
 	void *dir = pageDir;
 	list_t *sortedList = list_new();
 	set_sort(Urlfinal,sortedList);
 	set_delete(Urlfinal,itemdelete);
 
 	//If list is empty
-	if(list_isEmpty(sortedList)){
+	int size = list_size(sortedList);
+	if(size==0){
 		printf("No documents match\n");
 	}
 	else{
-		int count = list_size(sortedList);
-		printf("Matches %d ranked (ranked) :\n",count);
+		printf("Matches %d ranked (ranked) :\n",size);
 		list_iterate(sortedList,dir,printQuery);
 	}
  //Do list cont to find number of mathced pages
 	list_delete(sortedList,itemdelete);
-	
-	return 0; 
+
 }
+
+
 /* Convert a counters object into a set object
  */
-static void set_sort(set_t *set , list_t *sortedList){
-	
+static void set_sort(set_t *set , list_t *sortedList){	
 	set_iterate(set,sortedList,set_sortHelper); 
 }    
 
@@ -256,7 +265,6 @@ static void set_sortHelper(void *arg, const char *key, void *item){
 	int *temp = item;
 	int count = *temp; 
 	*itemBcopy = count;
-	
 	list_insert(arg,key,itemBcopy);
 } 
  
@@ -308,8 +316,7 @@ static void printQuery(void *pageDir, const char *key, void *item){
 	free(url); 
 }  
       
-    
-   
+
 /* Take the intersection of two sets and store it in the first set.
  * the second set is unchanged.
  */
@@ -329,16 +336,9 @@ set_intersect_helper(void *arg, const char *key, void *item)
   if (itemB == NULL) {
     *itemA = 0;  // not found this key in set B, set the int to zero
   } else {
-	int *itemBcopy = malloc(sizeof(int));
-	int *temp = itemB;
-	int count = *temp;
-	*itemBcopy = count;
-    *itemA = *itemA < *itemBcopy ? *itemA : *itemBcopy; // found the key, take the minimum
+  *itemA = *itemA < *itemB ? *itemA : *itemB; // found the key, take the minimum
   }
 }
-
-
-
 
 /* Merge the second set into the first set;
  * the second set is unchanged.
@@ -359,9 +359,6 @@ set_merge_helper(void *arg, const char *key, void *item)
   set_t *setA = arg;
   int *itemB = item;
 
-	
-
-  
   // find the same key in setA
   int *itemA = set_find(setA, key);
   if (itemA == NULL) {
@@ -409,8 +406,6 @@ itemdelete(void *item)
   if (item != NULL)
     free(item);
 }
-
-
 
 
 //main function 

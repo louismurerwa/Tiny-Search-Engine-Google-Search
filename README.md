@@ -4,7 +4,7 @@
 ## CS50 Software Development and Design.
 ### Tiny Search Engine.
 
-
+#### ***Download all files and run the command 'make test' to test this program.***
 
 DEMO:
 
@@ -31,7 +31,7 @@ To check memory run valgrind `make valgrind`
 Usage: /crawler [SEED_URL] [CRAWLER_DIRECTORY] [MAX_DEPTH] 
 
 ```
->The indexer takes in two parameters:
+>The querier takes in three parameters:
 ```sh  
  1. [SEED_URL] :A url that the crawler starts crawling at.
  2. [CRAWLER_DIRECTORY]: A crawler produced directory containing the files to index.

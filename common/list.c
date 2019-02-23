@@ -151,7 +151,10 @@ int list_size(list_t *list){
   }
   int count = 0;
   for (listnode_t *node = list->head; node != NULL; node = node->next) {
-    count++;
+    int *value = node->item;
+    if(*value>0){
+      count++;
+    }
   }
   return count;
 }

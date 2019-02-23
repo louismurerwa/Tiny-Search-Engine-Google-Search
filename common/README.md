@@ -16,3 +16,4 @@ To clean up, run `make clean`.
  * index - to store an inverted index (words –> documents).
  * pagedir - functions for TSE work with directories.
  * word -  functions for TSE work with words
+ * list - functions for TSE to store data in a sorted order

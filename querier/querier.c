@@ -102,7 +102,7 @@ int extractWords(char *sentence ,char *words[]){
 
 	}
 	//This is the number of words added to the array
-	return count;
+	return count; 
 }
 
 //This function is called by extract words to check if the word contains alpha numeric characters

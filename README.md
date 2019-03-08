@@ -101,6 +101,6 @@ Usage: /queriertest.sh
 
 ## Example Output
 
-Searchs: Dartmouth , College ,Dartmouth College, Dartmouth or College
+Queries: Dartmouth , College ,Dartmouth College, Dartmouth or College
 
 <img width="1434" alt="screen shot 2019-02-03 at 3 03 45 pm" src="https://github.com/LUXATHEMASTER/Tiny-Search-Engine-Google-Search/blob/master/img/Screenshot%202019-03-08%2015.04.12.png">
